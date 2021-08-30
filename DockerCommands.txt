@@ -1,0 +1,57 @@
+Docker Images
+	- template for creating an environment of yur choice
+	- has everything needed to run apps
+	- OS, Software, App code 
+	
+	
+Docker container
+	- Image --> run --> container
+	
+	
+	
+COMMAND : 
+Image : pull a image : docker pull <image name> (eg: docker pull nginx)
+		
+		list all images : docker images
+		
+		run a image : docker run <image name>:<image tag> (eg: docker pull nginx:latest)
+		
+		run a image in attached mode : docker run -d <image name>:<tag> (eg: docker run -d nginx:latest)
+		
+Container:
+		list all containers : docker container ls  OR docker ps
+		
+		start,stop a container : docker start <container id>, docker stop <container id>
+		
+		stop a container : docker stop <container id> (eg : docker stop 7868238232...)
+		
+		map a localhost port (8080) to tcp port (80) on docker container : docker run -d -p 8080:80 nginx:latest
+		
+		map multiple localhost ports (8000,3000) to the same tcp port exposed by docker container (80) : docker run -d -p 8080:80 -p 3000:80 nginx:latest
+	
+		list all docker containers that are not running currently : docker ps -a
+		
+		list all docker container ids : docker ps -aq
+		
+		remove a container : docker rm <container id>
+	
+		(**)remove all containers : docker rm $(docker ps -aq)
+		
+		(**)remove all containers force even if they are running : docker rm -f $(docker ps -aq)
+	
+		custom name of container : docker run --name <name> -d -p 3000:80 -p 8000:80 nginx:latest
+		
+	
+Volumes :	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
