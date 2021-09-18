@@ -1,0 +1,24 @@
+1- Create Dockerfile
+  - Use Java 11 image from docker hub - open jdk
+  - Rename the jar by adding in the pom.xml - after plugins - <finalName>docker-spring-boot</> - clean install again
+  - to add the jar in docker container - add the ADD in dockerfile
+  - expose the port 9000
+  - add the entrypoint line - like a main class for java - main for docker
+
+
+2- Create a docker image
+  - run "docker build -f Dockerfile -t docker-spring-boot ."
+  - check if the image is created "docker images"
+  - run the image 'docker run -p 9000:9000 docker-spring-boot' OR docker run --tty --publish <docker-spring-boot>
+  - spring boot application should start
+  - if application starts on any other port , add in the application.properties 'server.port=9000'
+
+
+  - if u make any change, we need to rebuild the image
+  - close the earlier image by using ctrl+c
+  - run 2.1 onwards again
+
+3- push image to docker hub
+  - tag the image "docker tag <<image name>> <<aamershaikh/spring-boot-docker>>"
+  - push to docker hub "docker push aamershaikh/spring-boot-docker...0.0.1snapshot<<image name>>"
+  - verify in docker hub "aamershaikh/...."
